@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: testaaa
+  labels:
+    app: testaaa
+  namespace: namespace-workflow-1709752314760
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: testaaa
+  template:
+    metadata:
+      labels:
+        app: testaaa
+    spec:
+      containers:
+        - name: testaaa
+          image: khacrtest.azurecr.io/image-workflow-1709752314760:latest
+          ports:
+            - containerPort: 80
